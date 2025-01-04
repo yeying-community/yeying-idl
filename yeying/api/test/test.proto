@@ -1,0 +1,29 @@
+syntax = "proto3";
+option go_package = "yeying/api/test";
+package yeying.api.test;
+
+import "yeying/api/common/message.proto";
+import "yeying/api/common/code.proto";
+
+service Test {
+  rpc Echo(EchoRequest) returns (EchoResponse) {}
+}
+
+message EchoRequest {
+  common.MessageHeader header = 1;
+  EchoRequestBody body = 2;
+}
+
+message EchoRequestBody {
+  string message = 1;
+}
+
+message EchoResponse {
+  common.MessageHeader header = 1;
+  EchoResponseBody body = 2;
+}
+
+message EchoResponseBody {
+  common.ResponseStatus status = 1;
+  string message = 2;
+}	
