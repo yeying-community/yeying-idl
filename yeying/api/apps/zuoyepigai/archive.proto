@@ -28,6 +28,8 @@ message ArchiveListResponseBody {
   common.ResponseStatus status = 1;
   // repeated 表示 List
   repeated ArchiveMeta list = 2;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 3;
 
 
 }
@@ -62,4 +64,6 @@ message ArchiveDetailResponse {
 message ArchiveDetailResponseBody {
   common.ResponseStatus status = 1;
   ArchiveMeta meta = 2;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 3;
 }

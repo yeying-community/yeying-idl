@@ -31,6 +31,8 @@ message HomeworkListResponseBody {
   common.ResponseStatus status = 1;
   // repeated 表示 List
   repeated HomeworkMeta list = 2;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 3;
 }
 message HomeworkMeta {
   // 主键标识
@@ -63,4 +65,6 @@ message HomeworkDetailResponse {
 message HomeworkDetailResponseBody {
   common.ResponseStatus status = 1;
   HomeworkMeta meta = 2;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 3;
 }

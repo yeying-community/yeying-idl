@@ -37,6 +37,8 @@ message MistakesListResponseBody {
   common.ResponseStatus status = 1;
   // repeated 表示 List
   repeated MistakesMeta list = 2;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 3;
 }
 
 message MistakesMeta {
@@ -68,6 +70,8 @@ message MistakesDetailResponse {
 message MistakesDetailResponseBody {
   common.ResponseStatus status = 1;
   MistakesMeta meta = 2;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 3;
 }
 // 错误分析
 message MistakesAnalysisRequest {
@@ -83,6 +87,8 @@ message MistakesAnalysisResponse {
 }
 message MistakesAnalysisResponseBody {
   common.ResponseStatus status = 1;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 2;
 }
 // 错误订正
 message MakeCorrectionRequest {
@@ -98,6 +104,8 @@ message MakeCorrectionResponse {
 }
 message MakeCorrectionResponseBody {
   common.ResponseStatus status = 1;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 2;
 }
 // 打印错题题目
 message MistakesPrintRequest {
@@ -113,6 +121,8 @@ message MistakesPrintResponse {
 }
 message MistakesPrintResponseBody {
   common.ResponseStatus status = 1;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 2;
 }
 // 提交订正的题目，重新生成图片，提交大模型批改
 message MistakesSubmitRequest {
@@ -128,4 +138,6 @@ message MistakesSubmitResponse {
 }
 message MistakesSubmitResponseBody {
   common.ResponseStatus status = 1;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 2;
 }

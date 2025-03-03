@@ -55,6 +55,8 @@ message AssignmentUploadResponseBody {
   common.ResponseStatus status = 1;
   // 大模型返回的数据
   string result = 2;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 3;
 }
 // 大模型做题
 message AssignmentBigModelRequest {
@@ -74,6 +76,8 @@ message AssignmentBigModelResponseBody {
   common.ResponseStatus status = 1;
   // 大模型返回的数据
   string result = 2;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 3;
 }
 // 人工做题，拍照上传答案，大模型识别图片题目文字和对应的答案
 message AssignmentArtificialRequest {
@@ -92,6 +96,8 @@ message AssignmentArtificialResponseBody {
   common.ResponseStatus status = 1;
   // 大模型返回的数据
   string result = 2;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 3;
 }
 
 // 学生加减
@@ -114,6 +120,8 @@ message StudentActionResponse {
 }
 message StudentActionResponseBody {
   common.ResponseStatus status = 1;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 2;
 }
 
 // 批改，题目 + 答案，调用大模型批改
@@ -134,4 +142,6 @@ message AssignmentCorrectionResponseBody {
   common.ResponseStatus status = 1;
   // 大模型返回的数据
   string result = 2;
+  // 接口异常时，返回的异常消息
+  string errorMessage = 3;
 }
