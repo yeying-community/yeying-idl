@@ -31,19 +31,19 @@ message AuditStatus {
 }
 
 message PendingStatus {
-  string text = 2;
+  string text = 1;
 }
 
 message CanceledStatus {
-  string text = 2;
+  string text = 1;
 }
 
 message PassedStatus {
-  string text = 2;
+  string text = 1;
 }
 
 message RejectStatus {
-  string text = 2;
+  string text = 1;
 }
 
 /**

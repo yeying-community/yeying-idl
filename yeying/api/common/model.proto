@@ -38,6 +38,8 @@ message ApplicationMetadata {
   string signature = 15;
   // 代码包下载路径
   string codePackagePath = 16;
+  // 应用状态
+  ApplicationOrServiceStatus status = 17;
 }
 
 message ServiceMetadata {
@@ -73,6 +75,8 @@ message ServiceMetadata {
   string signature = 15;
   // 代码包下载路径
   string codePackagePath = 16;
+  // 服务状态
+  ApplicationOrServiceStatus status = 17;
 }
 
 message StateMetadata {
@@ -91,3 +95,37 @@ message StateMetadata {
   /* 类型：应用/服务 */
   common.AuditTypeEnum type = 7;
 }
+
+/**
+应用/服务状态
+ */
+message ApplicationOrServiceStatus {
+  oneof status {
+    /**
+    未上架
+     */
+    DefaultStatus default = 1;
+    /**
+    已上架
+     */
+    OnlineStatus online = 2;
+    /**
+    已下架
+     */
+    OfflineStatus offline = 3;
+  }
+}
+
+message DefaultStatus {
+  string text = 1;
+}
+
+message OnlineStatus {
+  string text = 1;
+}
+
+message OfflineStatus {
+  string text = 1;
+}
+
+
